@@ -9,7 +9,7 @@ import time
 # ══════════════════════════════════════════════════
 # Basic config 
 # ══════════════════════════════════════════════════
-MODEL_PATH     = "space_v3.pt"
+MODEL_PATH     = "space_v2.pt"
 VIDEO_PATH     = "4.mp4"
 OUTPUT_DIR     = "test_results"
 CONF           = 0.25

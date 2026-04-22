@@ -33,7 +33,7 @@ The system combines object detection, multi-object tracking, ID stabilization, a
 1. Data Collection
 
    * Space dataset from Roboflow: https://universe.roboflow.com/space-0zlim/space-uxe02/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true
-   * Additional videos from NASA Image andVideo Library (converted to frames): https://images.nasa.gov/
+   * Additional videos from NASA Image and Video Library (converted to frames): https://images.nasa.gov/
 
 2. Annotation
 

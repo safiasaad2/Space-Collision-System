@@ -12,7 +12,7 @@
 
 This project presents a complete end-to-end computer vision pipeline for detecting and tracking space objects — Satellites and Space Rocks — and identifying potential collision risks in video sequences.
 
-The system combines object detection, multi-object tracking, stable ID assignment, orbit path visualization, and collision analysis into a unified real-time surveillance framework.
+The system combines object detection, multi-object tracking, stable ID assignment, trajectory visualization, and collision analysis into a unified real-time surveillance framework.
 
 ---
 
@@ -21,8 +21,7 @@ The system combines object detection, multi-object tracking, stable ID assignmen
 - Object detection using fine-tuned **YOLO26 Large** (Ultralytics) on a custom space dataset
 - Multi-object tracking using **ByteTrack**
 - Custom **Stable ID Mapper** to prevent ID switching across frames
-- **Orbit path visualization** with fade trails
-- **Multi-scale inference** for better detection of small objects
+- **Trajectory visualization** with motion trails
 - **Collision warning system** based on spatial proximity
 - Automatic saving of collision alert frames
 
@@ -56,7 +55,7 @@ The system combines object detection, multi-object tracking, stable ID assignmen
 ### 6. System Integration
 - Multi-scale detection + centroid tracking
 - Stable ID mapping across frames
-- Orbit path visualization
+- Trajectory visualization with motion trails
 - Collision distance monitoring and alerting
 
 ---
@@ -98,10 +97,10 @@ pip install -r requirements.txt
 ## ▶️ Usage
 
 ```bash
-python src/main.py
+python src/collision.py
 ```
 
-Edit the top of `main.py` to set your paths:
+Edit the top of `collision.py` to set your paths:
 
 ```python
 MODEL_PATH = "your_model.pt"
@@ -115,9 +114,11 @@ VIDEO_PATH = "your_video.mp4"
 ```
 Space-Collision-System/
 │
-├── src/                     # Surveillance system source code
+├── src/
+│   └── collision.py         # Detection, tracking & collision surveillance
 │
 ├── outputs/
+│   └── demo.mp4             # Demo preview
 │   └── alert_frames/        # Saved frames for collision events
 │
 ├── assets/
@@ -132,7 +133,7 @@ Space-Collision-System/
 
 ## ⚠️ Notes
 
-- Model weights are not included due to file size. To reproduce the model, training scripts and data pipeline are available upon request.
+- Model weights are not included due to file size. Training scripts and data pipeline are available upon request.
 - Works best with space footage where objects appear against a dark background.
 
 ---

@@ -42,7 +42,7 @@ The system combines object detection, multi-object tracking, stable ID assignmen
 ### 3. Data Analysis & Preprocessing
 - Class distribution analysis (4.8x imbalance detected)
 - 80 / 10 / 10 train / val / test split
-- Augmentation on train set with **×8 oversampling** for Space-Rock class
+- Augmentation on train set
 - Techniques: flip, HSV jitter, noise, random crop, cutout, mosaic
 
 ### 4. Model Training
@@ -53,7 +53,7 @@ The system combines object detection, multi-object tracking, stable ID assignmen
 - Precision, Recall, mAP50, mAP50-95 on held-out test set
 
 ### 6. System Integration
-- Multi-scale detection + centroid tracking
+- Real-time object detection + tracking using ByteTrack
 - Stable ID mapping across frames
 - Trajectory visualization with motion trails
 - Collision distance monitoring and alerting
@@ -64,9 +64,9 @@ The system combines object detection, multi-object tracking, stable ID assignmen
 
 | Class       | Precision | Recall | mAP50 | mAP50-95 |
 |-------------|-----------|--------|-------|----------|
-| All         | 0.827     | 0.657  | 0.776 | 0.571    |
-| Satellite   | 0.782     | 0.547  | 0.692 | 0.458    |
-| Space-Rock  | 0.871     | 0.767  | 0.860 | 0.685    |
+| All         | 0.852     | 0.847  | 0.894 | 0.69     |
+| Satellite   | 0.735     | 0.738  | 0.807 | 0.547    |
+| Space-Rock  | 0.969     | 0.957  | 0.982 | 0.833    |
 
 > Performance may vary depending on video resolution, lighting, motion blur, and object scale.
 
@@ -143,7 +143,7 @@ Space-Collision-System/
 - Continuous retraining with new space footage
 - ReID-based tracking (StrongSORT / DeepSORT) for more stable IDs
 - Temporal trajectory prediction using motion models or lightweight transformers
-- Expanded dataset with more Space-Rock samples
+- Expanded dataset with more samples
 
 ---
 
